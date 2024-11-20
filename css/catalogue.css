@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+
+main {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+article {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    gap: 10px;
+}
+
+section {
+    flex: 1 1 calc(33.33% - 20px); /* Ajuste la taille pour avoir trois sections par ligne avec un espace */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+fieldset {
+    width: 100%;
+}
+
+section img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+section p, section button {
+    margin: 5px 0;
+}
+
+
+section button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+section button:hover {
+    background-color: #218838;
+}
+

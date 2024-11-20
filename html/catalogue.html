@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Catalogue</title>
+    <link rel="stylesheet" type="text/css" href="../css/catalogue.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="../images/product1.jpg" alt="logo">
+            </ul>
+            <ul>
+                <a href="../index.html">Home</a>
+                <a href="#">Catalogue</a>
+                <a href="./connexion.html">connexion</a>
+                <a href="./inscription.html">inscription</a>
+                <a href="./Panier.html">Panier</a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Catalogue</h1>
+        <p>Here is a list of our products</p>
+
+        <article>
+            <section>
+                <fieldset>
+                    <legend>Product 1</legend>
+                    <img src="../image/téléchargement.jpg" alt="Product 1">
+                    <p>Price: $10</p>
+                    <button onclick="ajouterAuPanier('Product 1', 10)">Add to cart</button>
+                </fieldset>
+            </section>
+            <section>
+                <fieldset>
+                    <legend>Product 2</legend>
+                    <img src="../image/téléchargement.jpg" alt="Product 2">
+                    <p>Price: $20</p>
+                    <button onclick="ajouterAuPanier('Product 2', 20)">Add to cart</button>
+                </fieldset>
+            </section>
+            <section>
+                <fieldset>
+                    <legend>Product 3</legend>
+                    <img src="../image/téléchargement.jpg" alt="Product 3">
+                    <p>Price: $30</p>
+                    <button onclick="ajouterAuPanier('Product 3', 30)">Add to cart</button>
+                </fieldset>
+            </section>
+            <section>
+                <fieldset>
+                    <legend>Product 4</legend>
+                    <img src="../image/téléchargement.jpg" alt="Product 4">
+                    <p>Price: $40</p>
+                    <button onclick="ajouterAuPanier('Product 4', 40)">Add to cart</button>
+                </fieldset>
+            </section>
+            <section>
+                <fieldset>
+                    <legend>Product 5</legend>
+                    <img src="../image/téléchargement.jpg" alt="Product 5">
+                    <p>Price: $50</p>
+                    <button onclick="ajouterAuPanier('Product 5', 50)">Add to cart</button>
+                </fieldset>
+            </section>
+            <!-- Ajoutez d'autres produits ici de la même manière -->
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2021</p>
+    </footer>
+
+    <script>
+        function ajouterAuPanier(nom, prix) {
+            let panier = JSON.parse(localStorage.getItem('panier')) || [];
+            panier.push({ nom: nom, prix: prix });
+            localStorage.setItem('panier', JSON.stringify(panier));
+            alert(nom + ' a été ajouté au panier.');
+        }
+    </script>
+</body>
+
+</html>

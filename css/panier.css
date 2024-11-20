@@ -1,0 +1,105 @@
+main {
+    height: 600px;
+    width: auto;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+}
+
+ul#panier {
+    list-style: none;
+    padding: 0;
+}
+
+ul#panier li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul#panier li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+ul#panier li input {
+    width: 50px;
+}
+
+ul#panier li button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul#panier li button:hover {
+    background-color: #cc0000;
+}
+
+/* Ajoutez ceci à la fin de votre fichier panier.css */
+h2#total {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    text-align: right;
+}
+
+ul#panier li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul#panier li input {
+    width: 50px;
+    margin-right: 10px;
+}
+
+ul#panier li button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+ul#panier li button:hover {
+    background-color: #cc0000;
+}
+
+
+

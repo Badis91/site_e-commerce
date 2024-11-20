@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Panier</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/panier.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="../images/product1.jpg" alt="logo">
+            </ul>
+            <ul>
+                <a href="#">Home</a>
+                <a href="./catalogue.html">Catalogue</a>
+                <a href="./connexion.html">connexion</a>
+                <a href="./inscription.html">inscription</a>
+                <a href="./Panier.html">Panier</a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Panier</h1>
+        <p>Here is a list of the products in your cart</p>
+        <ul id="panier"></ul>
+        <h2>Total: <span id="total"></span></h2>
+    </main>
+    <footer>
+        <p>&copy; 2021</p>
+    </footer>
+
+    <script>
+        function afficherPanier() {
+            let panier = JSON.parse(localStorage.getItem('panier')) || [];
+            const listePanier = document.getElementById('panier');
+            const totalElement = document.getElementById('total');
+            listePanier.innerHTML = '';
+            let total = 0;
+
+            panier.forEach((article, index) => {
+                const quantité = article.quantité || 1;
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    ${article.nom} - $${article.prix} 
+                    <input type="number" min="1" value="${quantité}" onchange="modifierQuantité(${index}, this.value)">
+                    <button onclick="supprimerArticle(${index})">Supprimer</button>
+                `;
+                listePanier.appendChild(li);
+                total += article.prix * quantité;
+            });
+
+            totalElement.textContent = `$${total.toFixed(2)}`;
+        }
+
+        function supprimerArticle(index) {
+            let panier = JSON.parse(localStorage.getItem('panier')) || [];
+            panier.splice(index, 1);
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherPanier();
+        }
+
+        function modifierQuantité(index, nouvelleQuantité) {
+            let panier = JSON.parse(localStorage.getItem('panier')) || [];
+            if (nouvelleQuantité <= 0) {
+                panier.splice(index, 1);
+            } else {
+                panier[index].quantité = nouvelleQuantité;
+            }
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherPanier();
+        }
+
+        document.addEventListener('DOMContentLoaded', afficherPanier);
+    </script>
+</body>
+
+</html>
