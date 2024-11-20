@@ -11,7 +11,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    min-height: 84vh;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -42,7 +42,7 @@ label {
     margin-bottom: 10px;
 }
 
-input[type="email"], input[type="password"] {
+input{
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -66,3 +66,7 @@ button:hover {
     background-color: #218838;
 }
 
+form a {
+    text-align: center;
+    margin: 10px;
+}
